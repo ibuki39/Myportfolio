@@ -4,36 +4,32 @@
     padding: 0;
 }
 
-.page {
-    width: 1040;
-    margin: 0 auto;
-}
-
-body {
-    background-color: #f3f3f3;
-    font-size: 98%;
+#page {
     display: grid;
-    margin: 0;
-    min-height: 100vh;
-    grid-template-rows: 1fr 1fr 1fr 100px;
-    grid-template-columns: 3fr 1fr;
-    
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "space head head le"
+                        "space name nav le"
+                        "space main nav le"
+                        "space main nav le"
+                        "space foot foot le";
+    grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 4fr 2fr 1fr;
+
 }
 
-body > * {
-    margin: 3px;
-    padding: 10px;
+#head {
+    grid-area: head;
 }
 
-#name{
-    grid-row: 1/3;
-    grid-column: 1/2;
+.name {
+    grid-area: name;
 }
-p{
-    grid-row: 1/3;
-    grid-column: 1/2;
+
+#aisatu {
+    grid-area: main;
 }
-#sidemenu{
-    grid-row: 3/4;
-    grid-column: 1/2;
+
+#page > nav {
+    grid-area: nav;
 }
